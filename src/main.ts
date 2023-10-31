@@ -4,9 +4,8 @@ import * as CookieParser from 'cookie-parser';
 import { BadRequestException, ValidationPipe } from '@nestjs/common';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule, {cors: true});
+  const app = await NestFactory.create(AppModule, {cors: false});
   app.enableCors({
-    origin: true,
     credentials: true,
     allowedHeaders: [
       'Accept',
