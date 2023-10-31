@@ -16,6 +16,6 @@ export class UserResolver {
     async getUser(
         @Args('id') id: number,
     ){
-        return `${id} is the id`;
+        return 'Hello World';
     }
 }
