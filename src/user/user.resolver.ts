@@ -1,4 +1,4 @@
-import { Query, Resolver } from '@nestjs/graphql';
+import { Args, Query, Resolver } from '@nestjs/graphql';
 import { UserService } from './user.service';
 
 @Resolver()
@@ -10,5 +10,12 @@ export class UserResolver {
     @Query(() => String)
     hello() {
         return this.userService.hello();
+    }
+
+    @Query(() => String)
+    async getUser(
+        @Args('id') id: number,
+    ){
+        return `${id} is the id`;
     }
 }
