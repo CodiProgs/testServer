@@ -15,6 +15,7 @@ import { UserModule } from './user/user.module';
       sortSchema: true,
       playground: true,
       context: ({ req, res }) => ({ req, res }),
+      introspection: true,
     }),
     ConfigModule.forRoot({}),
     UserModule,
